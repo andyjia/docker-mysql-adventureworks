@@ -29,3 +29,21 @@ docker run -d --name adventureworks kliew/mysql-adventureworks
 
 ### Opening a bash terminal
 `docker exec -it adventureworks bash`
+
+### step 1
+`docker run -p 3306:3306 -d --name adventureworks -e MYSQL_ROOT_PASSWORD=  kliew/mysql-adventureworks`
+
+### step 2
+`mysql`
+`use mysql`
+`update user set password=password('') where user='sqoop';`
+`flush privileges`
+
+### step 3
+`ssh root@ip -p 22 -L 3307:localhost:3306`
+
+### step 4
+local terminal
+`mysql -usqoop -p -h127.0.0.1 -P3307`
+
+
