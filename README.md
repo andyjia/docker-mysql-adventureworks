@@ -34,10 +34,12 @@ docker run -d --name adventureworks kliew/mysql-adventureworks
 `docker run -p 3306:3306 -d --name adventureworks -e MYSQL_ROOT_PASSWORD=  kliew/mysql-adventureworks`
 
 ### step 2
-`mysql`
-`use mysql`
-`update user set password=password('') where user='sqoop';`
-`flush privileges`
+```
+mysql
+use mysql
+update user set password=password('') where user='sqoop';
+flush privileges
+```
 
 ### step 3
 `ssh root@ip -p 22 -L 3307:localhost:3306`
